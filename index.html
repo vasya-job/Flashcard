@@ -1,22 +1,35 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-<meta charset="UTF-8">
-<title>Китайские карточки</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chinese Flashcards Trainer</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<h1>🈶 Китайские карточки</h1>
-<div id="card">
-  <div id="chinese"></div>
-  <div id="pinyin"></div>
-  <div id="russian"></div>
-  <div id="english"></div>
-</div>
-<div class="buttons">
-  <button id="prev">⟵ Назад</button>
-  <button id="next">Вперёд ⟶</button>
-</div>
-<script src="script.js"></script>
+  <div class="app">
+    <h1>📘 Chinese Flashcards Trainer</h1>
+    <div class="stats">
+      <p>Пройдено: <span id="completed">0</span> / <span id="total">0</span></p>
+    </div>
+
+    <div id="card">
+      <div id="chinese" class="chinese">加载中...</div>
+      <div id="pinyin" class="pinyin"></div>
+      <div id="translation" class="hidden"></div>
+    </div>
+
+    <div class="buttons">
+      <button id="show">Показать ответ</button>
+      <button id="know" class="hidden">Знаю ✅</button>
+      <button id="dontknow" class="hidden">Не знаю ❌</button>
+    </div>
+
+    <div class="session">
+      <button id="reset">🔁 Начать заново</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
