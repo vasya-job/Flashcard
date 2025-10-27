@@ -1,27 +1,83 @@
 let words = [];
-let index = 0;
+let current = 0;
+let completed = JSON.parse(localStorage.getItem("completedWords")) || [];
+let stats = JSON.parse(localStorage.getItem("stats")) || { rounds: 0, learned: 0 };
 
-fetch('data/words.json')
-  .then(response => response.json())
-  .then(data => {
-    words = data;
-    showCard();
-  });
+const chinese = document.getElementById("chinese");
+const pinyin = document.getElementById("pinyin");
+const translation = document.getElementById("translation");
+const showBtn = document.getElementById("show");
+const knowBtn = document.getElementById("know");
+const dontKnowBtn = document.getElementById("dontknow");
+const completedEl = document.getElementById("completed");
+const totalEl = document.getElementById("total");
+const resetBtn = document.getElementById("reset");
 
-function showCard() {
-  const card = words[index];
-  document.getElementById('chinese').textContent = card.chinese;
-  document.getElementById('pinyin').textContent = card.pinyin;
-  document.getElementById('russian').textContent = card.russian;
-  document.getElementById('english').textContent = card.english;
+async function loadWords() {
+  const res = await fetch("data/words.json");
+  const data = await res.json();
+  words = data.filter(w => !completed.includes(w.chinese));
+  totalEl.textContent = data.length;
+  showCard();
 }
 
-document.getElementById('next').onclick = () => {
-  index = (index + 1) % words.length;
-  showCard();
+function showCard() {
+  if (words.length === 0) {
+    chinese.textContent = "🎉 Все слова изучены!";
+    pinyin.textContent = "";
+    translation.textContent = "";
+    showBtn.classList.add("hidden");
+    knowBtn.classList.add("hidden");
+    dontKnowBtn.classList.add("hidden");
+    return;
+  }
+  const word = words[current];
+  chinese.textContent = word.chinese;
+  pinyin.textContent = word.pinyin;
+  translation.textContent = `${word.russian} / ${word.english}`;
+  translation.classList.add("hidden");
+  showBtn.classList.remove("hidden");
+  knowBtn.classList.add("hidden");
+  dontKnowBtn.classList.add("hidden");
+}
+
+showBtn.onclick = () => {
+  translation.classList.remove("hidden");
+  showBtn.classList.add("hidden");
+  knowBtn.classList.remove("hidden");
+  dontKnowBtn.classList.remove("hidden");
 };
 
-document.getElementById('prev').onclick = () => {
-  index = (index - 1 + words.length) % words.length;
+knowBtn.onclick = () => {
+  const word = words[current];
+  completed.push(word.chinese);
+  stats.learned++;
+  localStorage.setItem("completedWords", JSON.stringify(completed));
+  localStorage.setItem("stats", JSON.stringify(stats));
+  completedEl.textContent = completed.length;
+  nextCard();
+};
+
+dontKnowBtn.onclick = () => nextCard();
+
+function nextCard() {
+  current = (current + 1) % words.length;
+  if (current === 0) {
+    words = words.filter(w => !completed.includes(w.chinese));
+  }
   showCard();
+}
+
+resetBtn.onclick = () => {
+  completed = [];
+  stats.rounds++;
+  localStorage.setItem("completedWords", JSON.stringify([]));
+  localStorage.setItem("stats", JSON.stringify(stats));
+  completedEl.textContent = 0;
+  loadWords();
+};
+
+window.onload = () => {
+  completedEl.textContent = completed.length;
+  loadWords();
 };
