@@ -1,34 +1,253 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="ru">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Chinese Flashcards Trainer</title>
+  <title>MebelPro — мебель под ключ по всей России</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="app">
-    <h1>📘 Chinese Flashcards Trainer</h1>
-    <div class="stats">
-      <p>Пройдено: <span id="completed">0</span> / <span id="total">0</span></p>
+  <header class="topbar">
+    <div class="logo">Mebel<span>Pro</span></div>
+    <nav class="nav">
+      <a href="#catalog">Каталог</a>
+      <a href="#collections">Коллекции</a>
+      <a href="#quiz">Подбор</a>
+      <a href="#reviews">Отзывы</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+    <div class="cta-group">
+      <span class="status">Доставка по России</span>
+      <button class="primary">Получить консультацию</button>
     </div>
+  </header>
 
-    <div id="card">
-      <div id="chinese" class="chinese">加载中...</div>
-      <div id="pinyin" class="pinyin"></div>
-      <div id="translation" class="hidden"></div>
-    </div>
+  <main>
+    <section class="hero">
+      <div class="hero__content">
+        <p class="eyebrow">20 лет на рынке • 1000+ фабрик-партнеров по России</p>
+        <h1>Мебель под ключ: от подушки до дивана</h1>
+        <p class="lead">Закрываем весь интерьер — от текстиля до модульных диванов. Работаем напрямую с фабриками, держим склад, доставляем и собираем под ключ.</p>
+        <div class="hero__actions">
+          <a class="primary" href="#catalog">Смотреть каталог</a>
+          <a class="ghost" href="#quiz">Подобрать комплект</a>
+        </div>
+        <div class="hero__metrics">
+          <div><strong>20 лет</strong><span>опыта на рынке</span></div>
+          <div><strong>1000+</strong><span>фабрик-партнеров</span></div>
+          <div><strong>15 000+</strong><span>моделей в наличии</span></div>
+        </div>
+      </div>
+      <div class="hero__visual">
+        <div class="card card--glass">
+          <p>Новая коллекция</p>
+          <h3>Сканди диван «Oslo»</h3>
+          <p class="price">от 54 900 ₽</p>
+          <ul>
+            <li>10 цветов обивки</li>
+            <li>Экологичный бук</li>
+            <li>Съемные чехлы</li>
+          </ul>
+          <button class="secondary">В корзину</button>
+        </div>
+        <div class="badge">-15% на комплекты гостиной до 30 ноября</div>
+      </div>
+    </section>
 
-    <div class="buttons">
-      <button id="show">Показать ответ</button>
-      <button id="know" class="hidden">Знаю ✅</button>
-      <button id="dontknow" class="hidden">Не знаю ❌</button>
-    </div>
+    <section class="filters" id="catalog">
+      <div class="filters__header">
+        <div>
+          <p class="eyebrow">Каталог</p>
+          <h2>Лучшие модели для дома и бизнеса</h2>
+          <p class="lead">Собрали популярные модели с быстрой доставкой. Фильтруйте по категории или введите запрос.</p>
+        </div>
+        <div class="search">
+          <input type="text" id="search" placeholder="Найти диван, стол или кресло" />
+          <span>🔍</span>
+        </div>
+      </div>
+      <div class="tabs" id="category-tabs"></div>
+      <div class="products" id="product-list"></div>
+    </section>
 
-    <div class="session">
-      <button id="reset">🔁 Начать заново</button>
+    <section class="collections" id="collections">
+      <div class="collection">
+        <div>
+          <p class="eyebrow">Коллекция Loft</p>
+          <h3>Металл, натуральное дерево и практичность</h3>
+          <p>Для квартир с характером: компактные диваны, обеденные группы и стеллажи, выдерживающие ежедневную нагрузку.</p>
+          <button class="secondary">Смотреть коллекцию</button>
+        </div>
+        <div class="collection__tag">В наличии</div>
+      </div>
+      <div class="collection collection--dark">
+        <div>
+          <p class="eyebrow">Скандинавия</p>
+          <h3>Теплые тона, мягкие формы и легкость</h3>
+          <p>Идеально для светлых интерьеров: модульные диваны, текстильные кровати и кресла в пастельных оттенках.</p>
+          <button class="ghost ghost--light">Получить каталог PDF</button>
+        </div>
+        <div class="collection__tag">Новые поступления</div>
+      </div>
+    </section>
+
+    <section class="quiz" id="quiz">
+      <div>
+        <p class="eyebrow">Быстрый подбор</p>
+        <h2>Ответьте на 3 вопроса — пришлем подборку за 10 минут</h2>
+        <ul class="checklist">
+          <li>Закроем все потребности: от подушек до дивана и шкафа</li>
+          <li>Подберем ткань и оттенок дерева под ваш интерьер</li>
+          <li>Расскажем про условия доставки, сборки и установки</li>
+        </ul>
+      </div>
+      <form class="quiz__form">
+        <label>
+          Что нужно?
+          <select id="need">
+            <option>Диван</option>
+            <option>Кровать</option>
+            <option>Стол</option>
+            <option>Комплект для гостиной</option>
+          </select>
+        </label>
+        <label>
+          Бюджет
+          <select id="budget">
+            <option>до 40 000 ₽</option>
+            <option>40 000 — 80 000 ₽</option>
+            <option>80 000 — 120 000 ₽</option>
+            <option>120 000+ ₽</option>
+          </select>
+        </label>
+        <label>
+          Контакт
+          <input type="text" id="contact" placeholder="Телефон или WhatsApp" />
+        </label>
+        <button type="button" class="primary" id="quiz-submit">Получить подборку</button>
+        <p class="hint">Мы не звоним без запроса. Отправим подборку и ответим в мессенджере.</p>
+      </form>
+    </section>
+
+    <section class="trust" id="contacts">
+      <div>
+        <p class="eyebrow">Почему нас выбирают</p>
+        <h2>Работаем прозрачно: от эскиза до сборки</h2>
+        <div class="trust__grid">
+          <div class="trust__item">
+            <h4>Собственное производство</h4>
+            <p>Контроль качества на каждом этапе, гарантия 3 года, возможность кастомизации.</p>
+          </div>
+          <div class="trust__item">
+            <h4>Доставка и сборка</h4>
+            <p>В среднем за 72 часа по Москве и области. Есть курьеры для подъема без лифта.</p>
+          </div>
+          <div class="trust__item">
+            <h4>Оплата как удобно</h4>
+            <p>Онлайн, по счету, рассрочка. Работаем с физлицами и бизнесом.</p>
+          </div>
+          <div class="trust__item trust__item--accent">
+            <h4>Большой склад</h4>
+            <p>Держим ассортимент в наличии, чтобы вы могли забрать мебель в день заказа.</p>
+          </div>
+          <div class="trust__item trust__item--accent">
+            <h4>Вся мебель под ключ</h4>
+            <p>Комплектуем дом целиком: текстиль, корпусная и мягкая мебель, свет и декор.</p>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div>
+            <p class="eyebrow">Свяжитесь с нами</p>
+            <h3>Покажем образцы тканей и посчитаем доставку</h3>
+            <p>Оставьте контакт — менеджер уточнит детали и закрепит скидку -10% на первый заказ.</p>
+          </div>
+          <div class="contact-card__actions">
+            <button class="primary">Заказать звонок</button>
+            <button class="ghost">Написать в WhatsApp</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="showrooms">
+      <div>
+        <p class="eyebrow">Шоу-румы в Краснодаре</p>
+        <h2>Приходите знакомиться и трогать образцы</h2>
+        <p class="lead">Два шоу-рума с готовыми решениями под разные бюджеты. Менеджер подберет комплекты и покажет ткани.</p>
+      </div>
+      <div class="showrooms__grid">
+        <div class="showroom">
+          <div class="showroom__header">
+            <span class="badge badge--ghost">Центр</span>
+            <span class="showroom__time">ежедневно 10:00–21:00</span>
+          </div>
+          <h4>ул. Северная, 324</h4>
+          <p>Салон мягкой мебели и столовых групп. Бесплатная парковка, образцы тканей и кожзамов.</p>
+          <button class="ghost">Проложить маршрут</button>
+        </div>
+        <div class="showroom">
+          <div class="showroom__header">
+            <span class="badge badge--ghost">Юг</span>
+            <span class="showroom__time">ежедневно 10:00–21:00</span>
+          </div>
+          <h4>ТРЦ «Красная Площадь»</h4>
+          <p>Готовые комнаты «под ключ»: гостиные, спальни, кабинеты. Можно забрать экспозицию в день посещения.</p>
+          <button class="ghost">Записаться на визит</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="reviews" id="reviews">
+      <div>
+        <p class="eyebrow">Отзывы</p>
+        <h2>Читаем отзывы клиентов в 2ГИС и Яндекс Картах</h2>
+        <p class="lead">Собираем обратную связь, чтобы улучшать сервис. Загляните в наши карточки и убедитесь сами.</p>
+      </div>
+      <div class="reviews__grid">
+        <div class="review-card">
+          <div class="review-card__header">
+            <div>
+              <p class="eyebrow">2ГИС</p>
+              <h4>Рейтинг 4.9 / 5</h4>
+            </div>
+            <span class="badge">238 отзывов</span>
+          </div>
+          <p>«Взяли комплект в гостиную, помогли подобрать ткань и доставили за два дня. Сборка аккуратная»</p>
+          <button class="ghost">Смотреть отзывы в 2ГИС</button>
+        </div>
+        <div class="review-card">
+          <div class="review-card__header">
+            <div>
+              <p class="eyebrow">Яндекс Карты</p>
+              <h4>Рейтинг 4.8 / 5</h4>
+            </div>
+            <span class="badge">314 отзывов</span>
+          </div>
+          <p>«Заказали мебель под ключ в новую квартиру: текстиль, кровать, диван и шкаф. Все привезли в срок»</p>
+          <button class="ghost">Смотреть отзывы в Яндекс Картах</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div>
+      <div class="logo">Mebel<span>Pro</span></div>
+      <p>Современная мебель под ваш стиль. Производим, доставляем, собираем.</p>
     </div>
-  </div>
+    <div class="footer__links">
+      <a href="#catalog">Каталог</a>
+      <a href="#quiz">Подбор</a>
+      <a href="#contacts">Контакты</a>
+    </div>
+    <div class="footer__contacts">
+      <p>+7 (900) 000-00-00</p>
+      <p>hello@mebelpro.ru</p>
+    </div>
+  </footer>
 
   <script src="script.js"></script>
 </body>
