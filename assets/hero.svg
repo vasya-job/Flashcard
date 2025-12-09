@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="820" viewBox="0 0 1400 820" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="120" y1="40" x2="1220" y2="760" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0F1114" />
+      <stop offset="1" stop-color="#1C2128" />
+    </linearGradient>
+    <linearGradient id="glow" x1="200" y1="160" x2="1160" y2="640" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#C8A86D" stop-opacity="0.28" />
+      <stop offset="1" stop-color="#C8A86D" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+  <rect width="1400" height="820" rx="32" fill="url(#bg)" />
+  <rect x="48" y="60" width="1304" height="700" rx="28" fill="url(#glow)" />
+  <rect x="120" y="150" width="520" height="420" rx="24" fill="#0B0D10" stroke="#20242B" stroke-width="6" />
+  <rect x="164" y="194" width="432" height="332" rx="18" fill="#14181F" stroke="#262C35" stroke-width="4" />
+  <rect x="164" y="452" width="432" height="72" rx="14" fill="#0F1116" stroke="#1E232C" stroke-width="4" />
+  <rect x="164" y="218" width="432" height="186" fill="url(#glow)" opacity="0.35" />
+  <rect x="652" y="228" width="600" height="312" rx="24" fill="#0C0F13" stroke="#1D222B" stroke-width="6" />
+  <rect x="700" y="272" width="504" height="90" rx="16" fill="#161A21" stroke="#272C36" stroke-width="4" />
+  <rect x="700" y="390" width="504" height="90" rx="16" fill="#161A21" stroke="#272C36" stroke-width="4" />
+  <rect x="700" y="508" width="360" height="20" rx="10" fill="#2F3641" />
+  <rect x="700" y="540" width="280" height="20" rx="10" fill="#2F3641" />
+  <rect x="700" y="570" width="360" height="20" rx="10" fill="#2F3641" />
+  <circle cx="1100" cy="188" r="42" fill="#C8A86D" opacity="0.45" />
+  <circle cx="1060" cy="164" r="18" fill="#E9D4A1" opacity="0.36" />
+  <rect x="880" y="144" width="120" height="22" rx="11" fill="#C8A86D" opacity="0.7" />
+  <rect x="120" y="640" width="1180" height="40" rx="12" fill="#0B0D10" stroke="#20242B" stroke-width="6" />
+  <rect x="160" y="648" width="180" height="24" rx="12" fill="#1E252F" />
+  <rect x="360" y="648" width="120" height="24" rx="12" fill="#1E252F" />
+  <rect x="520" y="648" width="300" height="24" rx="12" fill="#1E252F" />
+  <rect x="860" y="648" width="200" height="24" rx="12" fill="#1E252F" />
+  <rect x="1100" y="648" width="150" height="24" rx="12" fill="#C8A86D" opacity="0.85" />
+  <text x="164" y="500" fill="#E7ECF3" font-family="'Inter', 'Manrope', 'Helvetica', 'Arial', sans-serif" font-size="32" font-weight="700">Премиальный интерьер</text>
+  <text x="164" y="540" fill="#A6B0C0" font-family="'Inter', 'Manrope', 'Helvetica', 'Arial', sans-serif" font-size="18" font-weight="600">спокойная палитра, камень, панорамное остекление</text>
+  <text x="700" y="242" fill="#E7ECF3" font-family="'Inter', 'Manrope', 'Helvetica', 'Arial', sans-serif" font-size="28" font-weight="700">Пентхаус на Большой Ордынке</text>
+  <text x="700" y="632" fill="#A6B0C0" font-family="'Inter', 'Manrope', 'Helvetica', 'Arial', sans-serif" font-size="16" font-weight="600">Чистые линии, скрытые системы хранения, мягкий рассеянный свет</text>
+</svg>

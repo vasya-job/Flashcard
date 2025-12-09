@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="780" viewBox="0 0 1200 780" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="80" y1="80" x2="1080" y2="720" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0F1114" />
+      <stop offset="1" stop-color="#181C22" />
+    </linearGradient>
+    <linearGradient id="accent" x1="140" y1="140" x2="980" y2="640" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#C8A86D" stop-opacity="0.35" />
+      <stop offset="1" stop-color="#C8A86D" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="780" rx="28" fill="url(#bg)" />
+  <rect x="100" y="120" width="1000" height="560" rx="24" fill="#101318" stroke="#1F242C" stroke-width="6" />
+  <rect x="140" y="160" width="920" height="320" rx="18" fill="#14181F" stroke="#2B3039" stroke-width="4" />
+  <rect x="140" y="500" width="920" height="140" rx="18" fill="#0E1014" stroke="#1E232C" stroke-width="4" />
+  <rect x="140" y="160" width="920" height="320" fill="url(#accent)" opacity="0.35" />
+  <rect x="700" y="210" width="140" height="210" rx="16" fill="#0E1014" stroke="#272D36" stroke-width="4" />
+  <rect x="870" y="210" width="140" height="210" rx="16" fill="#0E1014" stroke="#272D36" stroke-width="4" />
+  <rect x="180" y="210" width="460" height="210" rx="16" fill="#0E1014" stroke="#272D36" stroke-width="4" />
+  <rect x="220" y="240" width="380" height="24" rx="12" fill="#202835" />
+  <rect x="220" y="280" width="220" height="16" rx="8" fill="#313B4A" />
+  <rect x="700" y="436" width="220" height="16" rx="8" fill="#2D3644" />
+  <rect x="180" y="530" width="320" height="16" rx="8" fill="#2D3644" />
+  <rect x="180" y="562" width="220" height="16" rx="8" fill="#2D3644" />
+  <rect x="860" y="530" width="160" height="16" rx="8" fill="#C8A86D" opacity="0.75" />
+  <rect x="180" y="598" width="420" height="22" rx="11" fill="#C8A86D" opacity="0.8" />
+  <text x="180" y="690" fill="#E7ECF3" font-family="'Inter', 'Manrope', 'Helvetica', 'Arial', sans-serif" font-size="30" font-weight="700">Пентхаус в Neva Towers</text>
+  <text x="180" y="724" fill="#A6B0C0" font-family="'Inter', 'Manrope', 'Helvetica', 'Arial', sans-serif" font-size="18" font-weight="600">Светлые панели, контрастные плоскости и интегрированный свет</text>
+</svg>
